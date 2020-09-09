@@ -15,25 +15,25 @@ char pokemon(int n, int m, char a[][100], char you, int energy) {
                 }
             }
     }
-    /*verificar movimentos impossíveis*/
+    /*verificar movimentos impossÃ­veis*/
     if(a[x-1][y] == '#' || energy<(a[x-1][y]-48) || (a[x-1][y]>=97 && a[x-1][y]<=122) || x-1>n || x-1<0) no=0;
     if(a[x][y+1] == '#' || energy<(a[x][y+1]-48) || (a[x][y+1]>=97 && a[x][y+1]<=122) || y+1>m || y+1<0) e=0;
     if(a[x][y-1] == '#' || energy<(a[x][y-1]-48) || (a[x][y-1]>=97 && a[x][y-1]<=122) || y-1>m || y-1<0) w=0;
     if(a[x+1][y] == '#' || energy<(a[x+1][y]-48) || (a[x+1][y]>=97 && a[x+1][y]<=122) || x+1>n || x+1<0) s=0;
-    /*matriz para guardar pontuação das direções*/
+    /*matriz para guardar pontuaÃ§Ã£o das direÃ§Ãµes*/
     int val[4];
     for (i=0;i<4;i++){
         val[i]=0;
     }
-    /*"+5" significa que o pokemon é 5x mais valioso do que andar / Segundo testes sem a linha "srand((unsigned) time(NULL));", usando um tabuleiro fixo, é o valor com melhor efetividade
+    /*"+5" significa que o pokemon Ã© 5x mais valioso do que andar / Segundo testes sem a linha "srand((unsigned) time(NULL));", usando um tabuleiro fixo, Ã© o valor com melhor efetividade
     "+40/(a[x][y]-37)" serve para direcionar para os pokemons de menor valor
-    Faz uma pontuação para cada direção*/
+    Faz uma pontuaÃ§Ã£o para cada direÃ§Ã£o*/
     if (no==1) {
         x1=x;
         while (a[x1][y]!='#' || (a[x1][y]<97 && a[x1][y]>122)){
             x1--;
             if (x1<0 || x1>n) break;
-            if (a[x1][y]==' ') val[0]++; //A distância não é punitiva pois, dentro dos mesmos testes com tabuleiro fixo, foi demonstrado que um pequeno incentivo para andar é benéfico. Fazendo o jogador explorar o mapa e encontrar novas rotas melhores
+            if (a[x1][y]==' ') val[0]++; //A distÃ¢ncia nÃ£o Ã© punitiva pois, dentro dos mesmos testes com tabuleiro fixo, foi demonstrado que um pequeno incentivo para andar Ã© benÃ©fico. Fazendo o jogador explorar o mapa e encontrar novas rotas melhores
             else if (a[x1][y]>=48 && a[x1][y]<=57) val[0]+=5+40/(a[x1][y]-37);
         }
     }
@@ -64,7 +64,7 @@ char pokemon(int n, int m, char a[][100], char you, int energy) {
             else if (a[x1][y]>=48 && a[x1][y]<=57) val[3]+=5+40/(a[x1][y]-37);
         }
     }
-    /*A maior pontuação é a melhor
+    /*A maior pontuaÃ§Ã£o Ã© a melhor
     Randomico ajuda a impedir de entrar no loop de ir e voltar*/
     srand((unsigned) time(NULL));
     for (i=0;i<4;i++){
@@ -77,7 +77,7 @@ char pokemon(int n, int m, char a[][100], char you, int energy) {
     else if (z==1) move='E';
     else if (z==2) move='W';
     else if (z==3) move='S';
-    /*verificar opções unicas*/
+    /*verificar opÃ§Ãµes unicas*/
     if (no==0 && e==0 && w==0 && s==0) move='X';
     else if (no==1 && e==0 && w==0 && s==0) move='N';
     else if (no==0 && e==1 && w==0 && s==0) move='E';
