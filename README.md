@@ -1,6 +1,6 @@
 # 🟢 Prog-C
 
-Exercícios da faculdade feitos em C
+Exercícios da faculdade e URI feitos em C
 
 IDEs Usada: Visual Studio | Codeblocks
 
