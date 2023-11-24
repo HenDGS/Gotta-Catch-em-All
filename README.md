@@ -59,11 +59,11 @@ A labyrinth generator was implemented for tests, as one was not avaliable outsid
 
 1. Compile with command 
 ```sh
-.\gcc.exe -Wall -O2 -ansi -Wno-unused-result -lm -std=c99 main.c -o main
+.\gcc.exe -Wall -O2 -ansi -Wno-unused-result -lm -std=c99 trabalho.c -o trabalho
 ````
 2. Run the output
  ```sh
- ./main
+ ./trabalho
  ```
 
 3. Enter values for position x, y and energy
