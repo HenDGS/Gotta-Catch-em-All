@@ -59,11 +59,11 @@ A labyrinth generator was implemented for tests, as one was not avaliable outsid
 
 1. Compile with command 
 ```sh
-.\gcc.exe -Wall -O2 -ansi -Wno-unused-result -lm -std=c99 trabalho.c -o trabalho
+.\gcc.exe -Wall -O2 -ansi -Wno-unused-result -lm -std=c99 main.c -o main
 ````
 2. Run the output
  ```sh
- ./trabalho
+ ./main
  ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
