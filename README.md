@@ -66,4 +66,6 @@ A labyrinth generator was implemented for tests, as one was not avaliable outsid
  ./main
  ```
 
+3. Enter values for position x, y and energy
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
